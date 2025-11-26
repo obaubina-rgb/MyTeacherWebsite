@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your English Journey - Репетитор английского языка</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Основные цвета */
+            --primary-bg: #D9BFB0;
+            --primary-text: #3c342c;
+            --secondary-bg: #E8D5CC;
+            --accent: #C8A88E;
+            --button-color: #9c7e7c;
+            
+            /* Цвета из блока "Готовы начать" */
+            --cta-primary: #D4A373;
+            --cta-secondary: #D4B483;
+            --cta-accent: #8C5E58;
+            
+            /* Зеленые акценты */
+            --green-primary: #8A9B68;
+            --green-light: #9CAF7D;
+            --green-dark: #7A8C5D;
+            
+            /* Темный фон */
+            --dark-bg: #A58F7E;
+            --dark-text: #3c342c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.8;
+            font-size: 22px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Первый блок - темный фон с фиксированной высотой */
+        .header-section {
+            text-align: center;
+            padding: 0 0 30px 0;
+            background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--green-primary);
+            position: relative;
+            overflow: hidden;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        .header-section .subtitle {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-text);
+        }
+        
+        .header-section p {
+            font-size: 1.8rem;
+            color: var(--primary-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        section {
+            padding: 40px;
+            margin-bottom: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        /* Второй блок - светлый фон */
+        .profile-section {
+            background-color: var(--secondary-bg);
+            border: 3px solid var(--green-light);
+            min-height: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Третий блок - темный фон */
+        .problem-section {
+            background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
+            border: 4px solid var(--green-primary);
+        }
+        
+        /* Четвертый блок - светлый фон */
+        .features-section {
+            background-color: var(--secondary-bg);
+            border: 3px solid var(--green-light);
+        }
+        
+        /* Блок с ценами - темный фон */
+        .pricing-section {
+            background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
+            border: 4px solid var(--green-primary);
+        }
+        
+        /* Блок отзывов с обводкой */
+        .testimonials-section {
+            background-color: var(--secondary-bg);
+            border: 3px solid var(--green-light);
+        }
+        
+        /* Последний блок CTA - темный фон */
+        .cta {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
+            border-radius: 15px;
+            margin-top: 35px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--green-primary);
+        }
+        
+        /* Футер - темный фон */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: var(--primary-text);
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
+            border-radius: 10px;
+            border: 4px solid var(--green-primary);
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            border-bottom: 3px solid var(--green-primary);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        /* Стили для заголовков на светлом фоне */
+        .profile-section h2,
+        .features-section h2,
+        .testimonials-section h2 {
+            color: var(--primary-text);
+        }
+        
+        /* Стили для заголовков на темном фоне */
+        .header-section h2,
+        .problem-section h2,
+        .pricing-section h2,
+        .cta h2 {
+            color: var(--primary-text);
+            border-bottom: 3px solid var(--primary-text);
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .photo-container {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 5px solid var(--green-primary);
+            overflow: hidden;
+            background: var(--primary-bg);
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .profile-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        /* Обновленные стили для блока "Как я это делаю" - два ряда */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 1.3rem;
+            border: 3px solid var(--green-light);
+            transition: all 0.3s ease;
+            text-align: center;
+            min-height: 250px;
+        }
+        
+        .feature:hover {
+            transform: scale(1.03);
+            border-color: var(--green-primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--green-primary);
+            flex-shrink: 0;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+            font-size: 1.3rem;
+            position: relative;
+            border: 3px solid var(--green-light);
+            text-align: center;
+        }
+        
+        .testimonial::before {
+            content: "“";
+            font-size: 5rem;
+            color: var(--green-primary);
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            opacity: 0.5;
+            font-family: Georgia, serif;
+        }
+        
+        .cta h2 {
+            color: var(--primary-text);
+            border-bottom: none;
+            font-size: 3rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
+            color: white;
+            padding: 22px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            border: 3px solid var(--green-light);
+            min-width: 280px;
+        }
+        
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            align-items: center;
+        }
+        
+        /* Стили для блока с ценами */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .price-card {
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--green-light);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .price-card.featured {
+            border: 4px solid var(--green-primary);
+            transform: scale(1.05);
+        }
+        
+        .price-card.featured::before {
+            content: "🔥 Популярный";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--green-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--green-primary);
+        }
+        
+        .price-card.featured:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .price-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-text);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--green-primary);
+        }
+        
+        .price-free {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--green-primary);
+        }
+        
+        .price-features {
+            list-style-type: none;
+            text-align: left;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        
+        .price-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .price-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--green-primary);
+            font-weight: bold;
+        }
+        
+        .price-container {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 2px dashed var(--green-light);
+        }
+        
+        @media (max-width: 1200px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .price-card.featured {
+                transform: none;
+            }
+            
+            .price-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 20px;
+            }
+            
+            .header-section .subtitle {
+                font-size: 2.2rem;
+            }
+            
+            .header-section p {
+                font-size: 1.5rem;
+            }
+            
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .photo-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            section {
+                padding: 30px;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            p {
+                font-size: 1.2rem;
+            }
+            
+            .feature-icon {
+                font-size: 2.8rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                max-width: 180px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 10px 0;
+            }
+            
+            .header-section,
+            .profile-section {
+                min-height: auto;
+                padding: 0 30px 30px 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-section .subtitle {
+                font-size: 2rem;
+            }
+            
+            .header-section p {
+                font-size: 1.4rem;
+            }
+            
+            .logo {
+                max-width: 150px;
+            }
+            
+            .header-section {
+                padding: 0 20px 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Первый блок - темный фон с фиксированной высотой -->
+        <section class="header-section">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/RJfcDd0j/logo.png" alt="Your English Journey" class="logo">
+            </div>
+            <p class="subtitle">Ваш путь к свободному английскому!</p>
+            <p>Хотите говорить по-английски свободно? Давайте сделаем это вместе! 🚀</p>
+        </section>
+        
+        <!-- Второй блок - светлый фон с фиксированной высотой -->
+        <section class="profile-section">
+            <h2>Кто я и почему мне можно доверять?</h2>
+            <div class="profile">
+                <!-- ВАШЕ ФОТО -->
+                <div class="photo-container">
+                    <img src="https://i.postimg.cc/7Gxz0jjS/J459Faux-VG4.png" alt="Ольга Баюбина - репетитор английского">
+                </div>
+                <div class="profile-text">
+                    <p>Привет! Меня зовут Ольга Баюбина, и я – преподаватель английского языка с 20+ годами опыта и международным сертификатом TEFL/TESOL. Я работала в Skillbox, SkyEng, YiYiEnglish, а также более 20 лет вела частную практику. За это время помогла сотням студентов – от малышей до взрослых – освоить английский легко, эффективно и с удовольствием.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Третий блок - темный фон -->
+        <section class="problem-section">
+            <h2>Какую проблему я решаю?</h2>
+            <p>Если вам кажется, что английский – это скучные правила, зубрёжка и вечный страх говорить, я готова доказать обратное! Моя методика делает изучение языка увлекательным, логичным и результативным.</p>
+        </section>
+        
+        <!-- Четвертый блок - светлый фон -->
+        <section class="features-section">
+            <h2>Как я это делаю?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <div>
+                        <strong>Индивидуальный подход:</strong> каждый урок адаптируется под ваши цели
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div>
+                        <strong>Разговорная практика без стресса</strong> – начнёте говорить с первых занятий
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <strong>Интерактивные материалы:</strong> игры, видео, аудио, реальные диалоги
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div>
+                        <strong>Онлайн-занятия</strong> через Zoom, Skype в удобное для вас время
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <strong>Проверенные методики,</strong> которые работают на 100%
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <strong>Поддержка и мотивация</strong> на протяжении всего обучения
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Блок с ценами - темный фон -->
+        <section class="pricing-section">
+            <h2>Форматы и стоимость занятий</h2>
+            <div class="pricing">
+                <div class="price-card featured">
+                    <h3>Пробное занятие</h3>
+                    <ul class="price-features">
+                        <li>Знакомство с методикой</li>
+                        <li>Определение уровня</li>
+                        <li>Постановка целей</li>
+                        <li>План обучения</li>
+                    </ul>
+                    <div class="price-container">
+                        <div class="price-free">Бесплатно</div>
+                        <a href="https://t.me/Olga_Baiubina" class="contact-btn" target="_blank">Записаться</a>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <h3>Индивидуальные занятия со взрослыми</h3>
+                    <ul class="price-features">
+                        <li>Персональная программа</li>
+                        <li>Гибкий график</li>
+                        <li>Фокус на ваших целях</li>
+                        <li>Все материалы включены</li>
+                    </ul>
+                    <div class="price-container">
+                        <div class="price">1500 руб./час</div>
+                        <a href="https://t.me/Olga_Baiubina" class="contact-btn" target="_blank">Записаться</a>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <h3>Индивидуальные занятия с детьми</h3>
+                    <ul class="price-features">
+                        <li>Игровая методика</li>
+                        <li>Интерактивные материалы</li>
+                        <li>Индивидуальный подход</li>
+                        <li>Регулярная обратная связь</li>
+                    </ul>
+                    <div class="price-container">
+                        <div class="price">1000 руб./час</div>
+                        <a href="https://t.me/Olga_Baiubina" class="contact-btn" target="_blank">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Блок отзывов с обводкой -->
+        <section class="testimonials-section">
+            <h2>Что говорят обо мне клиенты?</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    «После занятий с Ольгой я перестала бояться говорить! Уроки проходят легко, интересно и всегда с пользой!»
+                </div>
+                <div class="testimonial">
+                    «Сыну 8 лет, и он ждёт уроки с нетерпением – теперь английский не кажется ему сложным!»
+                </div>
+                <div class="testimonial">
+                    «Я готовилась к собеседованию на английском, и Ольга помогла мне уверенно пройти его!»
+                </div>
+            </div>
+        </section>
+        
+        <!-- Последний блок CTA - темный фон -->
+        <section class="cta">
+            <h2>📌 Готовы начать?</h2>
+            <p>Напишите мне в Telegram или ВКонтакте – помогу подобрать идеальную программу для вас или вашего ребёнка! Ваш English Journey начинается здесь! ✨</p>
+            <div class="btn-container">
+                <a href="https://t.me/Olga_Baiubina" class="contact-btn" target="_blank">Написать в Telegram</a>
+                <a href="https://vk.com/olga_baiubina" class="contact-btn" target="_blank">Написать в VK</a>
+            </div>
+        </section>
+        
+        <!-- Футер - темный фон -->
+        <footer>
+            <p>© 2025 Your English Journey. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>
