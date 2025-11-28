@@ -41,12 +41,293 @@
             color: var(--primary-text);
             line-height: 1.8;
             font-size: 22px;
+            padding-top: 80px; /* Отступ для фиксированной навигации */
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+        }
+        
+        /* ФИКСИРОВАННАЯ НАВИГАЦИЯ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-bg);
+            border-bottom: 3px solid var(--green-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-brand-logo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--green-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-text);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--green-light);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background-color: var(--green-primary);
+            color: white;
+        }
+        
+        /* Стили для слот-машины */
+        .slot-machine-section {
+            background-color: var(--secondary-bg);
+            border: 3px solid var(--green-light);
+            text-align: center;
+            padding: 40px;
+            margin-bottom: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slot-machine {
+            background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 4px solid var(--green-primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slot-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-text);
+        }
+        
+        .slot-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: var(--primary-text);
+        }
+        
+        .slot-reels {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .slot-reel {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            border: 3px solid var(--green-light);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .slot-button {
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--green-light);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .slot-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+        }
+        
+        .slot-button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .prize-display {
+            background-color: var(--primary-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 3px solid var(--green-light);
+            display: none;
+        }
+        
+        .prize-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--green-primary);
+            font-weight: bold;
+        }
+        
+        .prize-description {
+            font-size: 1.4rem;
+            color: var(--primary-text);
+            margin-bottom: 20px;
+        }
+        
+        .prize-button {
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--green-light);
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .prize-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+        }
+        
+        .used-message {
+            color: var(--cta-accent);
+            font-size: 1.3rem;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                font-size: 1rem;
+                padding: 6px 10px;
+            }
+            
+            body {
+                padding-top: 70px;
+            }
+            
+            .nav-brand {
+                font-size: 1.3rem;
+            }
+            
+            .slot-reel {
+                width: 80px;
+                height: 80px;
+                font-size: 2.8rem;
+            }
+            
+            .slot-title {
+                font-size: 1.8rem;
+            }
+            
+            .slot-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-menu {
+                gap: 8px;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+            
+            .navbar {
+                padding: 10px 0;
+            }
+            
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+            
+            .slot-reels {
+                gap: 10px;
+            }
+            
+            .slot-reel {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+            }
+            
+            .slot-button {
+                padding: 15px 30px;
+                font-size: 1.3rem;
+            }
         }
         
         /* Первый блок - темный фон с фиксированной высотой */
@@ -101,6 +382,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             text-align: center;
+            scroll-margin-top: 100px; /* Для плавной прокрутки к якорям */
         }
         
         /* Второй блок - светлый фон */
@@ -139,13 +421,91 @@
         
         /* Последний блок CTA - темный фон */
         .cta {
-            text-align: center;
             padding: 50px;
             background: linear-gradient(135deg, var(--cta-primary) 0%, var(--cta-secondary) 100%);
             border-radius: 15px;
             margin-top: 35px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border: 4px solid var(--green-primary);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .cta-left {
+            text-align: left;
+        }
+        
+        .cta-right {
+            text-align: left;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.4rem;
+        }
+        
+        .contact-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-text);
+            text-align: left;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--green-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--green-light);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--green-primary);
+            box-shadow: 0 0 0 3px rgba(138, 155, 104, 0.3);
+        }
+        
+        /* Стили для формы с зеленой рамкой */
+        .form-container {
+            padding: 30px;
+            border: 4px solid var(--green-primary);
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
         /* Футер - темный фон */
@@ -302,6 +662,7 @@
             color: var(--primary-text);
             border-bottom: none;
             font-size: 3rem;
+            text-align: left;
         }
         
         .contact-btn {
@@ -327,6 +688,13 @@
             transform: scale(1.05);
             box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
             background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.4rem;
+            margin-top: 10px;
         }
         
         .btn-container {
@@ -449,6 +817,20 @@
             }
         }
         
+        @media (max-width: 992px) {
+            .cta {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta h2 {
+                text-align: center;
+            }
+            
+            .contact-title {
+                text-align: center;
+            }
+        }
+        
         @media (max-width: 768px) {
             body {
                 font-size: 20px;
@@ -534,10 +916,45 @@
             .header-section {
                 padding: 0 20px 20px 20px;
             }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- ФИКСИРОВАННАЯ НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <div class="nav-brand-logo">YEJ</div>
+                Your English Journey
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Обо мне</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#problem" class="nav-link">Проблема</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#methods" class="nav-link">Методика</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pricing" class="nav-link">Стоимость</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Отзывы</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Первый блок - темный фон с фиксированной высотой -->
         <section class="header-section">
@@ -548,8 +965,37 @@
             <p>Хотите говорить по-английски свободно? Давайте сделаем это вместе! 🚀</p>
         </section>
         
+        <!-- Блок с слот-машиной -->
+        <section class="slot-machine-section">
+            <h2>🎰 Испытайте удачу!</h2>
+            <p>Крутите слот-машину и получите подарок для изучения английского!</p>
+            
+            <div class="slot-machine">
+                <div class="slot-title">Счастливый слот</div>
+                <div class="slot-subtitle">Каждый получает подарок!</div>
+                
+                <div class="slot-reels">
+                    <div class="slot-reel" id="reel1">🎁</div>
+                    <div class="slot-reel" id="reel2">🎁</div>
+                    <div class="slot-reel" id="reel3">🎁</div>
+                </div>
+                
+                <button class="slot-button" id="spin-button">Крутить!</button>
+                
+                <div class="prize-display" id="prize-display">
+                    <div class="prize-title" id="prize-title">Поздравляем!</div>
+                    <div class="prize-description" id="prize-description"></div>
+                    <div id="prize-button-container"></div>
+                </div>
+                
+                <div class="used-message" id="used-message" style="display: none;">
+                    Вы уже использовали свою попытку!
+                </div>
+            </div>
+        </section>
+        
         <!-- Второй блок - светлый фон с фиксированной высотой -->
-        <section class="profile-section">
+        <section id="about" class="profile-section">
             <h2>Кто я и почему мне можно доверять?</h2>
             <div class="profile">
                 <!-- ВАШЕ ФОТО -->
@@ -563,13 +1009,13 @@
         </section>
         
         <!-- Третий блок - темный фон -->
-        <section class="problem-section">
+        <section id="problem" class="problem-section">
             <h2>Какую проблему я решаю?</h2>
             <p>Если вам кажется, что английский – это скучные правила, зубрёжка и вечный страх говорить, я готова доказать обратное! Моя методика делает изучение языка увлекательным, логичным и результативным.</p>
         </section>
         
         <!-- Четвертый блок - светлый фон -->
-        <section class="features-section">
+        <section id="methods" class="features-section">
             <h2>Как я это делаю?</h2>
             <div class="features">
                 <div class="feature">
@@ -624,7 +1070,7 @@
         </section>
         
         <!-- Блок с ценами - темный фон -->
-        <section class="pricing-section">
+        <section id="pricing" class="pricing-section">
             <h2>Форматы и стоимость занятий</h2>
             <div class="pricing">
                 <div class="price-card featured">
@@ -670,7 +1116,7 @@
         </section>
         
         <!-- Блок отзывов с обводкой -->
-        <section class="testimonials-section">
+        <section id="reviews" class="testimonials-section">
             <h2>Что говорят обо мне клиенты?</h2>
             <div class="testimonials">
                 <div class="testimonial">
@@ -686,12 +1132,66 @@
         </section>
         
         <!-- Последний блок CTA - темный фон -->
-        <section class="cta">
-            <h2>📌 Готовы начать?</h2>
-            <p>Напишите мне в Telegram или ВКонтакте – помогу подобрать идеальную программу для вас или вашего ребёнка! Ваш English Journey начинается здесь! ✨</p>
-            <div class="btn-container">
-                <a href="https://t.me/Olga_Baiubina" class="contact-btn" target="_blank">Написать в Telegram</a>
-                <a href="https://vk.com/olga_baiubina" class="contact-btn" target="_blank">Написать в VK</a>
+        <section id="contact" class="cta">
+            <div class="cta-left">
+                <h2>📌 Готовы начать?</h2>
+                <p>Напишите мне напрямую – помогу подобрать идеальную программу для вас или вашего ребёнка! Ваш English Journey начинается здесь! ✨</p>
+                
+                <div class="contact-info">
+                    <div class="contact-title">КОНТАКТЫ</div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div>@Olga_Baiubina</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>+7(921) 976 06 79</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>olgasun2@yandex.ru</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-right">
+                <div class="form-container">
+                    <h3>Оставьте заявку</h3>
+                    <form id="contact-form" method="POST" action="https://formsubmit.co/olgasun2@yandex.ru">
+                        <input type="hidden" name="_subject" value="Новая заявка с сайта Your English Journey">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://your-site.com/thanks.html">
+                        
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Возраст</label>
+                            <input type="number" id="age" name="age" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goal">Цель занятий</label>
+                            <input type="text" id="goal" name="goal" class="form-control" placeholder="Например: для работы, путешествий, общего развития" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-method">Как связаться</label>
+                            <input type="text" id="contact-method" name="contact-method" class="form-control" placeholder="Например: телефон, телеграмм, whatsapp" required>
+                        </div>
+                        
+                        <button type="submit" class="contact-btn submit-btn">Отправить заявку</button>
+                    </form>
+                </div>
             </div>
         </section>
         
@@ -700,5 +1200,187 @@
             <p>© 2025 Your English Journey. Все права защищены.</p>
         </footer>
     </div>
+
+    <script>
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80; // Учитываем высоту навигации
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Подсветка активного пункта меню при скролле
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Обработка формы с отправкой на FormSubmit
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            // Форма будет отправлена через FormSubmit
+            // Можно добавить дополнительную валидацию здесь
+            console.log('Форма отправляется...');
+        });
+
+        // Слот-машина
+        document.addEventListener('DOMContentLoaded', function() {
+            const spinButton = document.getElementById('spin-button');
+            const reel1 = document.getElementById('reel1');
+            const reel2 = document.getElementById('reel2');
+            const reel3 = document.getElementById('reel3');
+            const prizeDisplay = document.getElementById('prize-display');
+            const prizeTitle = document.getElementById('prize-title');
+            const prizeDescription = document.getElementById('prize-description');
+            const prizeButtonContainer = document.getElementById('prize-button-container');
+            const usedMessage = document.getElementById('used-message');
+            
+            // Список призов
+            const prizes = [
+                {
+                    emoji: "📚",
+                    title: "Словарь с картинками по теме",
+                    description: "Красочный словарь с иллюстрациями по выбранной теме для легкого запоминания слов!",
+                    button: {
+                        text: "Забрать подарок",
+                        link: "https://disk.yandex.ru/i/ARQ-ZvZYQXK8oQ",
+                        external: true
+                    }
+                },
+                {
+                    emoji: "🎓",
+                    title: "Бесплатный урок",
+                    description: "Получите бесплатное пробное занятие для оценки вашего уровня и знакомства с методикой!",
+                    button: {
+                        text: "Забрать подарок",
+                        link: "mailto:olgasun2@yandex.ru?subject=Бесплатный урок&body=Здравствуйте! Я хочу получить бесплатный урок английского.",
+                        external: false
+                    }
+                },
+                {
+                    emoji: "📄",
+                    title: "Полезная ПДФка",
+                    description: "Сборник полезных материалов и упражнений в формате PDF для самостоятельной работы!",
+                    button: {
+                        text: "Забрать подарок",
+                        link: "https://disk.yandex.ru/i/qoerA4_QqXd_kQ",
+                        external: true
+                    }
+                },
+                {
+                    emoji: "🎬",
+                    title: "Обучающее видео",
+                    description: "Эксклюзивное видео с объяснением сложных тем английской грамматики!",
+                    button: {
+                        text: "Забрать подарок",
+                        link: "https://disk.yandex.ru/i/1ptG4w_ek5A1MQ",
+                        external: true
+                    }
+                },
+                {
+                    emoji: "🚗",
+                    title: "ААААААВТОМОБИЛЬ",
+                    description: "Шутка! Но вы получаете специальную скидку 10% на первый месяц занятий!",
+                    button: {
+                        text: "Забрать подарок",
+                        link: "mailto:olgasun2@yandex.ru?subject=Скидка 10%&body=Здравствуйте! Я хочу получить скидку 10% на первый месяц занятий.",
+                        external: false
+                    }
+                }
+            ];
+            
+            // Символы для анимации барабанов
+            const symbols = ["🍀", "⭐", "🎯", "💎", "🏆", "🎁", "✨", "🔑"];
+            
+            let used = false;
+            
+            spinButton.addEventListener('click', function() {
+                if (used) {
+                    usedMessage.style.display = 'block';
+                    return;
+                }
+                
+                used = true;
+                spinButton.disabled = true;
+                prizeDisplay.style.display = 'none';
+                usedMessage.style.display = 'none';
+                prizeButtonContainer.innerHTML = '';
+                
+                // Анимация барабанов
+                let spins = 0;
+                const maxSpins = 30;
+                const spinInterval = setInterval(() => {
+                    reel1.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                    reel2.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                    reel3.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                    
+                    spins++;
+                    
+                    if (spins >= maxSpins) {
+                        clearInterval(spinInterval);
+                        
+                        // Всегда выигрышная комбинация
+                        const prizeIndex = Math.floor(Math.random() * prizes.length);
+                        const prize = prizes[prizeIndex];
+                        
+                        // Показать выигрышные символы
+                        reel1.textContent = prize.emoji;
+                        reel2.textContent = prize.emoji;
+                        reel3.textContent = prize.emoji;
+                        
+                        // Показать приз
+                        setTimeout(() => {
+                            prizeTitle.textContent = `Поздравляем! Вы выиграли: ${prize.title}`;
+                            prizeDescription.textContent = prize.description;
+                            
+                            // Создать кнопку для получения подарка
+                            const prizeButton = document.createElement('a');
+                            prizeButton.className = 'prize-button';
+                            prizeButton.textContent = prize.button.text;
+                            prizeButton.href = prize.button.link;
+                            
+                            if (prize.button.external) {
+                                prizeButton.target = '_blank';
+                                prizeButton.rel = 'noopener noreferrer';
+                            }
+                            
+                            prizeButtonContainer.appendChild(prizeButton);
+                            
+                            prizeDisplay.style.display = 'block';
+                            spinButton.textContent = "Уже использовано";
+                        }, 500);
+                    }
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>
+
+
